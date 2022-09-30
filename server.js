@@ -5,6 +5,10 @@ const app = express();
 // connect database
 connectDB();
 
+// middle ware for post body
+// helps us to get data from req.body
+app.use(express.json({extended: false}));
+
 app.get('/', (req, res) => res.send('Hello World!'));
 
 // define routes
