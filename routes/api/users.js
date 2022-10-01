@@ -1,13 +1,11 @@
-const express = require('express');
-const router = express.Router();
-// express validator https://express-validator.github.io/docs/
-const { check, validationResult } = require('express-validator');
-// geting the table/collection from the database
-const User = require('../../models/User');
-const gravatar = require('gravatar');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const config = require('config');
+const express = require('express'); // Express
+const router = express.Router(); 
+const { check, validationResult } = require('express-validator'); // express validator https://express-validator.github.io/docs/
+const User = require('../../models/User'); // geting the table/collection from the database
+const gravatar = require('gravatar'); // gravatar https://www.npmjs.com/package/gravatar
+const bcrypt = require('bcryptjs'); // for hashing the password
+const jwt = require('jsonwebtoken'); // for generating the token
+const config = require('config'); // for getting the secret key
 
 // @route  post api/users
 // @desc   register user
