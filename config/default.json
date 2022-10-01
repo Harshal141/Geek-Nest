@@ -1,3 +1,4 @@
 {
-    "mongoURI":"mongodb+srv://hp123:hp123@devconnector.hrmnhhx.mongodb.net/?retryWrites=true&w=majority"
+    "mongoURI":"mongodb+srv://hp123:hp123@devconnector.hrmnhhx.mongodb.net/?retryWrites=true&w=majority",
+    "jwtSecret": "hp141Secret"
 }
