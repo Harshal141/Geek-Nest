@@ -278,6 +278,13 @@ router.delete('/education/:edu_id',auth, async (req,res)=>{
 
 // @router GET api/profile/github/:username
 // @desc   get user repos from github
+// @acess  public
+
+/* 
+register a user on : github.com/settings/developers
+take client id and client secret and put it in config/default.json
+include the request module
+*/
 
 router.get('/github/:username',(req,res)=>{
     try {
