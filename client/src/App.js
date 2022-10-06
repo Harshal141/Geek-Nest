@@ -6,7 +6,7 @@ import Register from './components/auth/Register';
 // importing router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import {BrowserRouter as Router,Route} from 'react-router-dom';
-import Switch from "react-switch";
+// import Switch from "react-switch";
 import React from 'react';
 
 const App = () => (
