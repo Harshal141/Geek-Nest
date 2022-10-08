@@ -9,19 +9,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Switch from "react-switch";
 import React from 'react';
 
+// redux
+import { Provider } from 'react-redux';
+import store from './store';
+
 const App = () => (
-//   <Router>
-//   <Fragment>
-//     <Navbar />
-//     <Route exact path="/" component={Landing} />
-//     <section className="container">
-//       <Switch>
-//         <Route exact path="/register" component={Register} />
-//         <Route exact path="/login" component={Login} />
-//       </Switch>
-//     </section>
-//   </Fragment>
-//  </Router> 
+  <Provider store ={store}>
 
 <BrowserRouter>
 <Navbar />
@@ -35,6 +28,7 @@ const App = () => (
     {/* </section> */}
   </Routes>
 </BrowserRouter>
+</Provider>
 );
 
 export default App;
