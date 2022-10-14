@@ -57,6 +57,7 @@ async (req,res)=>{
                 id: user.id
             }
         }
+        // defining the token and sending it back to the client
         jwt.sign(payload, config.get('jwtSecret'), {expiresIn: 360000}, (err, token)=>{
             if(err) throw err;
             res.json({token});

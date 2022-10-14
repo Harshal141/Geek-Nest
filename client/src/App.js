@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from 'react';
 
 // redux
+// provider combines react with redux so we enclose all components innit
 import { Provider } from 'react-redux';
 import store from './store';
 

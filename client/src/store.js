@@ -1,3 +1,8 @@
+// this remains same 
+// put this in app.js file
+// import { Provider } from 'react-redux';
+// import store from './store';
+
 import { createStore , applyMiddleware } from 'redux' ;
 import thunk from 'redux-thunk' ;
 import rootReducer from './reducers' ;
