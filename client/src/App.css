@@ -43,9 +43,10 @@ img {
 
 /* Utilities */
 .container {
+  overflow: visible;
   max-width: 1100px;
   margin: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 0 2rem;
   margin-top: 6rem;
   margin-bottom: 3rem;

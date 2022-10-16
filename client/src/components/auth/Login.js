@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import Alert from '../layout/Alert';
 
 const Login = () => {
   const [formData,setFormData] = useState({
@@ -17,7 +18,8 @@ const Login = () => {
 
 
   return (
-    <section className = "container">
+    <section className="container">
+    <Alert />
     <h1 className="large text-primary">Sign In</h1>
       <p className="lead"><i className="fas fa-user"></i> Sign Into Your Account</p>
       <form className="form" onSubmit={e => onSubmit(e)}>
@@ -37,7 +39,7 @@ const Login = () => {
         <input type="submit" className="btn btn-primary" value="Register" />
       </form>
       <p className="my-1">
-        Dont have an account? <link to="/register">Sign Up</link>
+        Dont have an account? <Link to="/register">Sign Up</Link>
       </p>
     </section>
   )
