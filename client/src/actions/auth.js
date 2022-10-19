@@ -2,8 +2,31 @@ import axios from 'axios';
 import {
     REGISTER_SUCCESS,
     REGISTER_FAIL,
+    USER_LOADED,
+    AUTH_ERROR
 } from './types';
 import { setAlert } from './alert';
+import setAuthToken from '../utils/setAuthToken';
+
+// load user
+export const loadUser = () => async dispatch => {
+    // sending x-auth-token in the header
+    if(localStorage.token){
+        setAuthToken(localStorage.token);
+    }
+    try {
+        const res = await axios.get('/api/auth');
+        dispatch({
+            type: USER_LOADED,
+            payload: res.data
+        });
+    } catch (err) {
+        dispatch({
+            type: AUTH_ERROR
+        });
+    }
+};
+
 
 // Register User
 // these are then send to reduceers\auth.js
