@@ -1,37 +1,7 @@
-import React,{Fragment} from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
-import {connect } from 'react-redux';
-import { ReactPropTypes } from 'react';
-import { logout } from '../../actions/auth';
 
-const Navbar = ({auth:{isAuthenticated,loading},logout}) => {
-  const authLinks = (
-    <li className="nav-item">
-          <Link className="nav-link" to="/register"><a onClick={logout} href="#!">
-        <i className="fas fa-sign-out-alt"></i>{' '}
-          <span className="hide-sm">Logout</span></a></Link>
-    </li>
-    // <ul>
-    //   <li>
-    //     <a onClick={logout} href="#!">
-    //     <i className="fas fa-sign-out-alt"></i>{' '}
-    //       <span className="hide-sm">Logout</span></a>
-    //   </li>
-    // </ul>
-  )
-  const guestLinks = (
-    <>
-    <li className="nav-item">
-      <Link className="nav-link" to="!#">Developers</Link>
-    </li>
-    <li className="nav-item">
-      <Link className="nav-link" to="/register">Register</Link>
-    </li>
-    <li className="nav-item">
-      <Link className="nav-link" to="/login">Login</Link>
-    </li>
-    </>
-  )
+const Navbar = () => {
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <div className="container-fluid">
@@ -44,7 +14,15 @@ const Navbar = ({auth:{isAuthenticated,loading},logout}) => {
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to="/">Home</Link>
         </li>
-        {!loading && (<Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>)}
+        <li className="nav-item">
+          <Link className="nav-link" to="!#">Developers</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/register">Register</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/login">Login</Link>
+        </li>
       </ul>
     </div>
   </div>
@@ -52,13 +30,4 @@ const Navbar = ({auth:{isAuthenticated,loading},logout}) => {
   )
 }
 
-Navbar.ReactPropTypes = {
-  logout: ReactPropTypes.func.isRequired,
-  auth: ReactPropTypes.object.isRequired
-}
-
-const mapStateToProps = state => ({
-  auth: state.auth
-});
-
-export default connect(mapStateToProps,{logout})(Navbar);
+export default Navbar
