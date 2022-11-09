@@ -17,6 +17,6 @@ app.use('/api/auth',require('./routes/api/auth'));
 app.use('/api/profile',require('./routes/api/profile'));
 app.use('/api/posts',require('./routes/api/posts'));
 
-const port = process.env.PORT || 5000;
+const port = 5000;
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
